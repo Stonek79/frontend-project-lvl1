@@ -1,0 +1,22 @@
+{
+  "name": "brain_games",
+  "version": "1.0.0",
+  "description": "Small games for big brains",
+  "main": " bin/brain-games.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stonek79/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "first_project"
+  ],
+  "author": "Stonek79",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stonek79/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Stonek79/frontend-project-lvl1#readme"
+}
