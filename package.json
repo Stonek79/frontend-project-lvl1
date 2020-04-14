@@ -2,7 +2,11 @@
   "name": "brain_games",
   "version": "1.0.0",
   "description": "Small games for big brains",
-  "main": " bin/brain-games.js",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Stonek79/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/Stonek79/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/Stonek79/frontend-project-lvl1#readme",
+  "dependencies": {
+    "node": "^13.12.0"
+  }
 }
