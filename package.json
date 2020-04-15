@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Stonek79/frontend-project-lvl1#readme",
   "dependencies": {
-    "node": "^13.12.0"
+    "node": "^13.12.0",
+    "readline-sync": "^1.4.10"
   }
 }
