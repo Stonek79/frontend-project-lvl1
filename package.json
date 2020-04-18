@@ -2,10 +2,14 @@
   "name": "brain_games",
   "version": "1.0.0",
   "description": "Small games for big brains",
-  "main": "src/index.js",
+  "main": {
+    "brain-games": "src/index.js",
+    "brain-even": "src/isEven"
+  },
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
