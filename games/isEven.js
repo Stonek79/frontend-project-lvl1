@@ -10,7 +10,7 @@ const correctAnswer = (question) => ((question % 2 === 0) ? 'yes' : 'no');
 const isEven = () => {
   greeting();
   for (let i = 0; i < 3; i += 1) {
-    gameEngine(gameRule, gameQuestion, correctAnswer);
+    gameEngine(gameQuestion, correctAnswer, gameRule);
   }
 };
 
