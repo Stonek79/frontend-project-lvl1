@@ -12,7 +12,7 @@ const gameQuestion = () => {
   const randomNumberTwo = Math.floor(Math.random() * 10);
   return (`${randomNumberOne} ${randomOperand} ${randomNumberTwo}`);
 };
-const correctAnswer = (gQ) => eval(gQ);
+const correctAnswer = (question) => eval(question);
 
 const calc = () => {
   greeting();
