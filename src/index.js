@@ -11,17 +11,20 @@ export const greeting = () => {
 };
 
 export const gameEngine = (gameQuestion, correctAnswer, gameRule) => {
-  console.log(gameRule);
-  for (let i = 0; i < 3; i += 1) {
-    const answer = gameQuestion();
-    const userAnswer = readlineSync.question(`Question: ${answer} `);
-    console.log(`Your answer: ${userAnswer} `);
-    const rightAnswer = correctAnswer(answer);
-    if (userAnswer !== `${rightAnswer}`) {
-      return console.log(`"${userAnswer}" is wrong answer ;(.
-        Correct answer was "${rightAnswer}". \n Let's try again, ${userName}!`);
+  for (let j = 0; j < 3; j += 1) {
+    console.log(gameRule);
+    for (let i = 0; i < 3; i += 1) {
+      const answer = gameQuestion();
+      const userAnswer = readlineSync.question(`Question: ${answer} `);
+      console.log(`Your answer: ${userAnswer} `);
+      const rightAnswer = correctAnswer(answer);
+      if (userAnswer !== `${rightAnswer}`) {
+        console.log(`"${userAnswer}" is wrong answer ;(.
+          Correct answer was "${rightAnswer}". \n Let's try again, ${userName}!`);
+        break;
+      }
+      console.log('Correct!');
+      if (i === 2) { console.log(`Congratulations, ${userName}!`); }
     }
-    console.log('Correct!');
   }
-  return console.log(`Congratulations, ${userName}!`);
 };

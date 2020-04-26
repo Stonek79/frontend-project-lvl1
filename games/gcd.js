@@ -29,9 +29,7 @@ const correctAnswer = (question) => {
 
 const gcd = () => {
   greeting();
-  for (let i = 0; i < 3; i += 1) {
-    gameEngine(gameQuestion, correctAnswer, gameRule);
-  }
+  gameEngine(gameQuestion, correctAnswer, gameRule);
 };
 
 export default gcd;

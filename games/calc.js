@@ -16,8 +16,6 @@ const correctAnswer = (question) => eval(question);
 
 const calc = () => {
   greeting();
-  for (let i = 0; i < 3; i += 1) {
-    gameEngine(gameQuestion, correctAnswer, gameRule);
-  }
+  gameEngine(gameQuestion, correctAnswer, gameRule);
 };
 export default calc;

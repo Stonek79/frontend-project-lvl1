@@ -9,9 +9,7 @@ const correctAnswer = (question) => ((question % 2 === 0) ? 'yes' : 'no');
 
 const isEven = () => {
   greeting();
-  for (let i = 0; i < 3; i += 1) {
-    gameEngine(gameQuestion, correctAnswer, gameRule);
-  }
+  gameEngine(gameQuestion, correctAnswer, gameRule);
 };
 
 export default isEven;
