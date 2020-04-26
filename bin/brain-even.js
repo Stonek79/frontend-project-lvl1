@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable import/extensions */
 
-import isEven from '../games/isEven.js';
+import startIsEvenGame from '../games/isEven.js';
 
-isEven();
+startIsEvenGame();

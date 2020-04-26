@@ -4,8 +4,8 @@
 import { greeting, gameEngine } from '../src/index.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const gameQuestion = () => Math.floor(Math.random() * 20);
-const correctAnswer = (question) => {
+const creationGameQuestion = () => Math.floor(Math.random() * 20);
+const creationCorrectAnswer = (question) => {
   for (let i = 2; i < question; i += 1) {
     if (question % i === 0) {
       return 'no';
@@ -14,9 +14,9 @@ const correctAnswer = (question) => {
   return 'yes';
 };
 
-const isPrime = () => {
+const startIsPrimeGame = () => {
   greeting();
-  gameEngine(gameQuestion, correctAnswer, gameRule);
+  gameEngine(creationGameQuestion, creationCorrectAnswer, gameRule);
 };
 
-export default isPrime;
+export default startIsPrimeGame;

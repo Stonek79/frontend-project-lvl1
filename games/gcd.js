@@ -4,32 +4,32 @@
 import { greeting, gameEngine } from '../src/index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
-const gameQuestion = () => {
+const creationGameQuestion = () => {
   const randomNumberOne = (1 + Math.floor(Math.random() * 10));
   const randomNumberTwo = (1 + Math.floor(Math.random() * 10));
   return (`${randomNumberOne} ${randomNumberTwo}`);
 };
-const correctAnswer = (question) => {
-  const item = question.toString().split(' ');
-  const divOne = item[0];
-  const divTwo = item[1];
-  const maxDivisor = (firstDiv, secondDiv) => {
+const creationCorrectAnswer = (question) => {
+  const divisors = question.toString().split(' ');
+  const divOne = divisors[0];
+  const divTwo = divisors[1];
+  const findMaxDivisor = (firstDiv, secondDiv) => {
     const numOne = firstDiv;
     const numTwo = secondDiv;
     while (numOne !== numTwo) {
       if (numTwo === 0) {
         return Math.abs(numOne);
       }
-      return maxDivisor(numTwo, numOne % numTwo);
+      return findMaxDivisor(numTwo, numOne % numTwo);
     }
     return numOne;
   };
-  return maxDivisor(divOne, divTwo);
+  return findMaxDivisor(divOne, divTwo);
 };
 
-const gcd = () => {
+const startGcdGame = () => {
   greeting();
-  gameEngine(gameQuestion, correctAnswer, gameRule);
+  gameEngine(creationGameQuestion, creationCorrectAnswer, gameRule);
 };
 
-export default gcd;
+export default startGcdGame;
