@@ -7,7 +7,8 @@
     "brain-even": "games/isEven.js",
     "brain-calc": "games/calc.js",
     "brain-gcd": "games/gcd.js",
-    "brain-progression": "games/progression.js"
+    "brain-progression": "games/progression.js",
+    "brain-prime": "games/isPrime.js"
   },
   "type": "module",
   "bin": {
@@ -15,7 +16,8 @@
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
-    "brain-progression": "bin/brain-progression.js"
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
