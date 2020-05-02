@@ -1,23 +1,29 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
-import { greeting, gameEngine } from '../src/index.js';
+import gameEngine from '../src/index.js';
+import randomGenerator from './randomGenerator.js';
 
 const gameRule = 'What number is missing in the progression?';
-const creationGameQuestion = () => {
-  const progressionLine = [2, 4, 6, 10, 16, 26, 42, 68, 110, 178];
-  const selectElem = Math.floor(Math.random() * progressionLine.length);
-  progressionLine.splice(selectElem, 1, '..');
-  return progressionLine.join(' ');
-};
-const creationCorrectAnswer = (question) => {
-  const progressionLine = [2, 4, 6, 10, 16, 26, 42, 68, 110, 178];
-  const arrFromQuestion = question.split(' ');
-  return progressionLine[arrFromQuestion.indexOf('..')];
+const gameGenerator = () => {
+  let correctAnswer;
+  const firstProgressionNumber = randomGenerator(5) + 1;
+  const stepOfProgression = randomGenerator(5) + 1;
+  const numberOfHiddenElem = randomGenerator(9) + 1;
+  let progression = firstProgressionNumber;
+  for (let i = 1; i < 10; i += 1) {
+    const sum = firstProgressionNumber + stepOfProgression * i;
+    if (i === numberOfHiddenElem) {
+      progression += ` ${'..'}`;
+      correctAnswer = sum;
+    } else {
+      progression += ` ${sum}`;
+    }
+  }
+  return { question: progression, answer: correctAnswer };
 };
 
 const startProgressionGame = () => {
-  greeting();
-  gameEngine(creationGameQuestion, creationCorrectAnswer, gameRule);
+  gameEngine(gameGenerator, gameRule);
 };
 export default startProgressionGame;

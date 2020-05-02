@@ -3,24 +3,23 @@
 
 import readlineSync from 'readline-sync';
 
-let userName;
-export const greeting = () => {
+const gameEngine = (theGame, gameRule) => {
   console.log('Welcome to the Brain Games!');
-  userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-};
 
-export const gameEngine = (gameQuestion, correctAnswer, gameRule) => {
-  for (let j = 0; j < 3; j += 1) {
+  const numberOfRounds = 3;
+  for (let j = 0; j < numberOfRounds; j += 1) {
     console.log(gameRule);
     for (let i = 0; i < 3; i += 1) {
-      const answer = gameQuestion();
-      const userAnswer = readlineSync.question(`Question: ${answer} `);
+      const gameDatas = theGame();
+      const gameQuestion = gameDatas.question;
+      const correctAnswer = gameDatas.answer;
+      const userAnswer = readlineSync.question(`Question: ${gameQuestion} `);
       console.log(`Your answer: ${userAnswer} `);
-      const rightAnswer = correctAnswer(answer);
-      if (userAnswer !== `${rightAnswer}`) {
+      if (userAnswer !== `${correctAnswer}`) {
         console.log(`"${userAnswer}" is wrong answer ;(.
-          Correct answer was "${rightAnswer}". \n Let's try again, ${userName}!`);
+          Correct answer was "${correctAnswer}". \n Let's try again, ${userName}!`);
         break;
       }
       console.log('Correct!');
@@ -28,3 +27,4 @@ export const gameEngine = (gameQuestion, correctAnswer, gameRule) => {
     }
   }
 };
+export default gameEngine;

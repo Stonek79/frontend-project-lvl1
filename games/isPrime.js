@@ -1,22 +1,27 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
-import { greeting, gameEngine } from '../src/index.js';
+import gameEngine from '../src/index.js';
+import randomGenerator from './randomGenerator.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const creationGameQuestion = () => Math.floor(Math.random() * 20);
-const creationCorrectAnswer = (question) => {
-  for (let i = 2; i < question; i += 1) {
-    if (question % i === 0) {
-      return 'no';
+
+const gameGenerator = () => {
+  const gameQuestion = randomGenerator(20);
+  const isAnswerPrime = (number) => {
+    for (let i = 2; i <= number / 2; i += 1) {
+      if (number % i === 0) {
+        return false;
+      }
     }
-  }
-  return 'yes';
+    return true;
+  };
+  const correctAnswer = ((isAnswerPrime(gameQuestion)) ? 'yes' : 'no');
+  return { question: gameQuestion, answer: correctAnswer };
 };
 
 const startIsPrimeGame = () => {
-  greeting();
-  gameEngine(creationGameQuestion, creationCorrectAnswer, gameRule);
+  gameEngine(gameGenerator, gameRule);
 };
 
 export default startIsPrimeGame;

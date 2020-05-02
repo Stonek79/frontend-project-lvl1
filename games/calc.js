@@ -1,21 +1,31 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
-/* eslint-disable no-eval */
 
-import { greeting, gameEngine } from '../src/index.js';
+import gameEngine from '../src/index.js';
+import randomGenerator from './randomGenerator.js';
 
 const gameRule = 'What is the result of the expression?';
-const creationGameQuestion = () => {
+const gameGenerator = () => {
   const arrOperand = ['+', '-', '*'];
-  const randomOperand = arrOperand[Math.floor(Math.random() * arrOperand.length)];
-  const randomNumberOne = Math.floor(Math.random() * 10);
-  const randomNumberTwo = Math.floor(Math.random() * 10);
-  return (`${randomNumberOne} ${randomOperand} ${randomNumberTwo}`);
+  const randomOperand = arrOperand[randomGenerator(arrOperand.length)];
+  const randomNumberOne = randomGenerator(10);
+  const randomNumberTwo = randomGenerator(10);
+  const gameQuestion = (`${randomNumberOne} ${randomOperand} ${randomNumberTwo}`);
+  const expression = (operand) => {
+    switch (operand) {
+      case '+':
+        return randomNumberOne + randomNumberTwo;
+      case '-':
+        return randomNumberOne - randomNumberTwo;
+      default:
+        return randomNumberOne * randomNumberTwo;
+    }
+  };
+  const correctAnswer = expression(randomOperand);
+  return { question: gameQuestion, answer: correctAnswer };
 };
-const creationCorrectAnswer = (question) => eval(question);
 
 const startCalcGame = () => {
-  greeting();
-  gameEngine(creationGameQuestion, creationCorrectAnswer, gameRule);
+  gameEngine(gameGenerator, gameRule);
 };
 export default startCalcGame;

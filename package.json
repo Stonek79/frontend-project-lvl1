@@ -37,7 +37,6 @@
   "homepage": "https://github.com/Stonek79/frontend-project-lvl1#readme",
   "dependencies": {
     "@hexlet/pairs": "^1.0.14",
-    "node": "^13.12.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

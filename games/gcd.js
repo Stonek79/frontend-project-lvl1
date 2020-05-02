@@ -1,35 +1,29 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
-import { greeting, gameEngine } from '../src/index.js';
+import gameEngine from '../src/index.js';
+import randomGenerator from './randomGenerator.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
-const creationGameQuestion = () => {
-  const randomNumberOne = (1 + Math.floor(Math.random() * 10));
-  const randomNumberTwo = (1 + Math.floor(Math.random() * 10));
-  return (`${randomNumberOne} ${randomNumberTwo}`);
-};
-const creationCorrectAnswer = (question) => {
-  const divisors = question.toString().split(' ');
-  const divOne = divisors[0];
-  const divTwo = divisors[1];
+const gameGenerator = () => {
+  const randomNumberOne = randomGenerator(20) + 1;
+  const randomNumberTwo = randomGenerator(20) + 1;
+  const gameQuestion = (`${randomNumberOne} ${randomNumberTwo}`);
   const findMaxDivisor = (firstDiv, secondDiv) => {
-    const numOne = firstDiv;
-    const numTwo = secondDiv;
-    while (numOne !== numTwo) {
-      if (numTwo === 0) {
-        return Math.abs(numOne);
+    while (firstDiv !== secondDiv) {
+      if (secondDiv === 0) {
+        return Math.abs(firstDiv);
       }
-      return findMaxDivisor(numTwo, numOne % numTwo);
+      return findMaxDivisor(secondDiv, firstDiv % secondDiv);
     }
-    return numOne;
+    return firstDiv;
   };
-  return findMaxDivisor(divOne, divTwo);
+  const correctAnswer = findMaxDivisor(randomNumberOne, randomNumberTwo);
+  return { question: gameQuestion, answer: correctAnswer };
 };
 
 const startGcdGame = () => {
-  greeting();
-  gameEngine(creationGameQuestion, creationCorrectAnswer, gameRule);
+  gameEngine(gameGenerator, gameRule);
 };
 
 export default startGcdGame;
