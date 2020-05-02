@@ -1,9 +1,8 @@
 {
   "name": "brain_games",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small games for big brains",
   "main": {
-    "brain-games": "src/index.js",
     "brain-even": "games/isEven.js",
     "brain-calc": "games/calc.js",
     "brain-gcd": "games/gcd.js",
@@ -12,7 +11,6 @@
   },
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
