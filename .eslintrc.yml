@@ -9,4 +9,7 @@ globals:
 parserOptions:
   ecmaVersion: 2020
   sourceType: module
-rules: {}
+rules: {
+  "no-console": "off",
+  "import/extensions": "off"
+  }

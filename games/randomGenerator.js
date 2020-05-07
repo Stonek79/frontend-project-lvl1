@@ -1,3 +1,3 @@
-const randomGenerator = (x) => Math.floor(Math.random() * x);
+const randomGenerator = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);
 
 export default randomGenerator;
