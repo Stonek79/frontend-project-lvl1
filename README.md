@@ -1,10 +1,8 @@
 # frontend-project-lvl1
 <a href="https://codeclimate.com/github/Stonek79/frontend-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 [![WF](https://github.com/Stonek79/frontend-project-lvl1/workflows/FirstWF/badge.svg)](https://github.com/Stonek79/frontend-project-lvl1/actions)
-<a href="https://asciinema.org/a/fvQUQKsbMVxiykhAOBjpuC3P3" target="_blank"><img src="https://asciinema.org/a/fvQUQKsbMVxiykhAOBjpuC3P3.svg" /></a>
-<a href="https://asciinema.org/a/HSj2MzTjgCQsyQ9MkpkRWZ9CS" target="_blank"><img src="https://asciinema.org/a/HSj2MzTjgCQsyQ9MkpkRWZ9CS.svg" /></a>
-<a href="https://asciinema.org/a/H67q8x39ROzTuQhB1w9pbNy8T" target="_blank"><img src="https://asciinema.org/a/H67q8x39ROzTuQhB1w9pbNy8T.svg" /></a>
-<a href="https://asciinema.org/a/vkHakEvEaIMOd5H8R3Wdbl3up" target="_blank"><img src="https://asciinema.org/a/vkHakEvEaIMOd5H8R3Wdbl3up.svg" /></a>
-<a href="https://asciinema.org/a/q194thP82Zi7n6qO7StaNaHC1" target="_blank"><img src="https://asciinema.org/a/q194thP82Zi7n6qO7StaNaHC1.svg" /></a>
-
-For a stable game use "node" version 10.0 or higher.
+[![calc](https://asciinema.org/a/LRnlUT2XxP8A1y0SRIlqwY01R.svg)](https://asciinema.org/a/LRnlUT2XxP8A1y0SRIlqwY01R)
+[![even](https://asciinema.org/a/YJ2HJtvQda5xXidK0bMxlk6tB.svg)](https://asciinema.org/a/YJ2HJtvQda5xXidK0bMxlk6tB)
+[![prime](https://asciinema.org/a/0f3VuqmFTbTN0gIdVIIJkgeE0.svg)](https://asciinema.org/a/0f3VuqmFTbTN0gIdVIIJkgeE0)
+[![gcd](https://asciinema.org/a/3ZV6mhGjBd9YqWPdlkq5xVeqn.svg)](https://asciinema.org/a/3ZV6mhGjBd9YqWPdlkq5xVeqn)
+[![progression](https://asciinema.org/a/YenmywRKFXfEwF8zTzB2XXOXn.svg)](https://asciinema.org/a/YenmywRKFXfEwF8zTzB2XXOXn)
