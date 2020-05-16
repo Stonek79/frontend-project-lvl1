@@ -1,4 +1,3 @@
-
 import gameEngine from '../index.js';
 import randomNumberGenerator from '../randomGenerator.js';
 
@@ -14,14 +13,14 @@ const isPrime = (number) => {
   return true;
 };
 
-const getDatasForGame = () => {
+const getGameData = () => {
   const gameQuestion = randomNumberGenerator(0, 20);
-  const correctAnswer = ((isPrime(gameQuestion)) ? 'yes' : 'no');
+  const correctAnswer = (isPrime(gameQuestion)) ? 'yes' : 'no';
   return { question: gameQuestion, answer: correctAnswer };
 };
 
 const startIsPrimeGame = () => {
-  gameEngine(getDatasForGame, gameRule);
+  gameEngine(getGameData, gameRule);
 };
 
 export default startIsPrimeGame;

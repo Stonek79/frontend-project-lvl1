@@ -1,33 +1,32 @@
-
 import gameEngine from '../index.js';
 import randomNumberGenerator from '../randomGenerator.js';
 
 const gameRule = 'What is the result of the expression?';
 
-const operands = ['+', '-', '*'];
-const getAnswer = (numOne, numTwo, operand) => {
-  switch (operand) {
+const operators = ['+', '-', '*'];
+const getAnswer = (numOne, numTwo, operator) => {
+  switch (operator) {
     case '+':
-      return numOne + numTwo;
+      return (numOne + numTwo).toString();
     case '-':
-      return numOne - numTwo;
+      return (numOne - numTwo).toString();
     case '*':
-      return numOne * numTwo;
+      return (numOne * numTwo).toString();
     default:
-      return console.log('Wrong operand!');
+      return null;
   }
 };
 
-const getDatasForGame = () => {
-  const randomOperand = operands[randomNumberGenerator(0, operands.length - 1)];
+const getGameData = () => {
+  const randomOperator = operators[randomNumberGenerator(0, operators.length - 1)];
   const randomNumberOne = randomNumberGenerator(0, 10);
   const randomNumberTwo = randomNumberGenerator(0, 10);
-  const gameQuestion = (`${randomNumberOne} ${randomOperand} ${randomNumberTwo}`);
-  const correctAnswer = getAnswer(randomNumberOne, randomNumberTwo, randomOperand);
+  const gameQuestion = (`${randomNumberOne} ${randomOperator} ${randomNumberTwo}`);
+  const correctAnswer = getAnswer(randomNumberOne, randomNumberTwo, randomOperator);
   return { question: gameQuestion, answer: correctAnswer };
 };
 
 const startCalcGame = () => {
-  gameEngine(getDatasForGame, gameRule);
+  gameEngine(getGameData, gameRule);
 };
 export default startCalcGame;

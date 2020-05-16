@@ -1,33 +1,32 @@
-
 import gameEngine from '../index.js';
 import randomNumberGenerator from '../randomGenerator.js';
 
 const gameRule = 'What number is missing in the progression?';
 
 const lengthOfProgression = 10;
-const getProgression = (firstElem, step, hiddenElem) => {
-  let result = firstElem;
-  for (let i = 1; i < lengthOfProgression; i += 1) {
-    const sum = firstElem + step * i;
-    if (i === hiddenElem) {
-      result = `${result} ${'..'}`;
+const getQuestion = (firstElement, step, indexToHideElement) => {
+  const progression = [];
+  for (let i = 0; i < lengthOfProgression; i += 1) {
+    const progressionElement = firstElement + step * i;
+    if (i === indexToHideElement) {
+      progression.push('..');
     } else {
-      result = `${result} ${sum}`;
+      progression.push(progressionElement);
     }
   }
-  return result;
+  return progression.join(' ');
 };
 
-const getDatasForGame = () => {
+const getGameData = () => {
   const firstProgressionNum = randomNumberGenerator(1, 5);
-  const stepOfProgression = randomNumberGenerator(1, 5);
-  const numOfHiddenElem = randomNumberGenerator(1, lengthOfProgression);
-  const progressionLine = getProgression(firstProgressionNum, stepOfProgression, numOfHiddenElem);
-  const correctAnswer = firstProgressionNum + stepOfProgression * numOfHiddenElem;
+  const stepInProgression = randomNumberGenerator(1, 5);
+  const indexOfHiddenElement = randomNumberGenerator(1, lengthOfProgression - 1);
+  const progressionLine = getQuestion(firstProgressionNum, stepInProgression, indexOfHiddenElement);
+  const correctAnswer = (firstProgressionNum + stepInProgression * indexOfHiddenElement).toString();
   return { question: progressionLine, answer: correctAnswer };
 };
 
 const startProgressionGame = () => {
-  gameEngine(getDatasForGame, gameRule);
+  gameEngine(getGameData, gameRule);
 };
 export default startProgressionGame;
